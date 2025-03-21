@@ -13,4 +13,13 @@ import { ProfileComponent } from './profile/profile.component';
 })
 export class AppComponent {
   title = 'angular-01tutor';
+  handleClick(){
+    alert("function click")
+    this.otheClickEvent()
+  };
+
+
+  otheClickEvent(){
+    console.log("this event worked")
+  };
 }
