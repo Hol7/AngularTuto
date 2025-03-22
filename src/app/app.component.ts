@@ -13,6 +13,22 @@ import { ProfileComponent } from './profile/profile.component';
 })
 export class AppComponent {
   title = 'angular-01tutor';
+  count = 0;
+
+  handleIncrement(){
+    this.count = this.count + 1;
+
+  }
+  handeleDecrement(){
+    if(this.count === 0){
+      return this.count
+    }
+    return this.count=this.count - 1;
+  }
+
+  handleReset(){
+    this.count=0
+  }
 
   name:string = "Fabrone";
   data: number | string =30;

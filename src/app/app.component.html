@@ -4,3 +4,13 @@
 <app-login></app-login>
 <app-signup></app-signup>
 <app-profile></app-profile>
+<h1>Counter App</h1>
+
+<div>
+  <h1>{{count}}</h1>
+  <div>
+    <button (click)="handleIncrement()" class="btn bg-red">Increment</button>
+    <button (click)="handleReset()" class="btn bg-black">Reset</button>
+    <button (click)="handeleDecrement()" class="btn bg-green">Decrement</button>
+  </div>
+</div>
