@@ -7,55 +7,63 @@ import { ProfileComponent } from './profile/profile.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ LoginComponent, SignupComponent, ProfileComponent],
+  imports: [LoginComponent, SignupComponent, ProfileComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'angular-01tutor';
   count = 0;
 
-  handleIncrement(){
-    this.count = this.count + 1;
-
-  }
-  handeleDecrement(){
-    if(this.count === 0){
-      return this.count
+  handleCounterLogic(value: string) {
+    if (value === 'minus') {
+      if (this.count === 0) {
+        this.count;
+      } else {
+        this.count = this.count - 1;
+      }
+    } else if (value === 'plus') {
+      this.count = this.count + 1;
+    } else {
+      this.count = 0;
     }
-    return this.count=this.count - 1;
   }
 
-  handleReset(){
-    this.count=0
+  handleIncrement() {
+    this.count = this.count + 1;
+  }
+  handeleDecrement() {
+    if (this.count === 0) {
+      return this.count;
+    }
+    return (this.count = this.count - 1);
   }
 
-  name:string = "Fabrone";
-  data: number | string =30;
+  handleReset() {
+    this.count = 0;
+  }
+
+  name: string = 'Fabrone';
+  data: number | string = 30;
 
   userLogin: boolean = true;
-  info:unknown = "salut la famille";
+  info: unknown = 'salut la famille';
 
-
-  accessInfo(){
-    this.title = "Bonjour le monde";
+  accessInfo() {
+    this.title = 'Bonjour le monde';
     this.data = 50;
-
   }
 
-  sumFunction(a:number, b:number){
-    console.log(a+b);
+  sumFunction(a: number, b: number) {
+    console.log(a + b);
   }
 
+  handleClick() {
+    alert('function click');
+    this.otheClickEvent();
+  }
 
-
-  handleClick(){
-    alert("function click")
-    this.otheClickEvent()
-  };
-
-
-  otheClickEvent(){
-    console.log("this event worked")
-  };
+  otheClickEvent() {
+    console.log('this event worked');
+  }
 }
