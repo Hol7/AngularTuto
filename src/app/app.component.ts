@@ -14,6 +14,19 @@ import { ProfileComponent } from './profile/profile.component';
 export class AppComponent {
   title = 'angular-01tutor';
   count = 0;
+  username = '';
+
+  handleInputEvent(event: Event) {
+    let name = (event.target as HTMLInputElement).value;
+
+    console.log('eve', name);
+    // this.username = name;
+  }
+
+  addInpuInfo(AddInfoInput:string){
+    this.username = AddInfoInput;
+
+  }
 
   handleCounterLogic(value: string) {
     if (value === 'minus') {
