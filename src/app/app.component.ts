@@ -13,6 +13,26 @@ import { ProfileComponent } from './profile/profile.component';
 })
 export class AppComponent {
   title = 'angular-01tutor';
+
+  name:string = "Fabrone";
+  data: number | string =30;
+
+  userLogin: boolean = true;
+  info:unknown = "salut la famille";
+
+
+  accessInfo(){
+    this.title = "Bonjour le monde";
+    this.data = 50;
+
+  }
+
+  sumFunction(a:number, b:number){
+    console.log(a+b);
+  }
+
+
+
   handleClick(){
     alert("function click")
     this.otheClickEvent()
