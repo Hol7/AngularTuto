@@ -45,6 +45,8 @@
 
 @for(user of users ; track user){
   <div>{{user}}</div>
+}@empty {
+  <h3>No value</h3>
 }
 
 @for(student of students; track student; let id = $index ){
