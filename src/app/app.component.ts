@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from './signup/signup.component';
@@ -16,23 +16,45 @@ export class AppComponent {
   count = 0;
   username = '';
   display = false;
-  users = ['dan','mse','toton','messieu','charle'];
+  users = ['dan', 'mse', 'toton', 'messieu', 'charle'];
   students = [
-    {name:'mulan',age:20},
-    {name:'acte',age:21},
-    {name:'ser',age:20},
-    {name:'polin',age:40},
+    { name: 'mulan', age: 20 },
+    { name: 'acte', age: 21 },
+    { name: 'ser', age: 20 },
+    { name: 'polin', age: 40 },
   ];
 
+  corout = signal(100);
+  dataa:WritableSignal<number> = signal(10)
+  dato:WritableSignal<number|string> = signal(10)
 
-  show(){
-    this.display = true;
+  constructor() {
+    effect(() => {
+      console.log(this.corout());
+    });
+  };
 
+  updateDataa(){
+    this.dataa.update(value => value +1 );
+    // this.dato.set(this.dato("jouer"))
   }
-  hide(){
+
+  updateDataaa(){
+    // this.dataa.update(value => value +1 );
+    this.dato.set("bonjoue")
+  }
+
+  updateValue(){
+    this.corout.set(this.corout() +1)
+  }
+
+  show() {
+    this.display = true;
+  }
+  hide() {
     this.display = false;
   }
-  toggle(){
+  toggle() {
     this.display = !this.display;
   }
 
@@ -43,9 +65,8 @@ export class AppComponent {
     // this.username = name;
   }
 
-  addInpuInfo(AddInfoInput:string){
+  addInpuInfo(AddInfoInput: string) {
     this.username = AddInfoInput;
-
   }
 
   handleCounterLogic(value: string) {
