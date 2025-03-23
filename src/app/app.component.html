@@ -20,7 +20,23 @@
 
 <h1>Input </h1>
 <h1>{{username}} </h1>
-<input #AddInfoInput 
+<input 
+#AddInfoInput 
 (input)="handleInputEvent($event)"
  placeholder="username">
 <button (click)="addInpuInfo(AddInfoInput.value)">Add input Value</button>
+
+<h1>Condition</h1>
+
+<button (click)="show()">show</button>
+
+<button (click)="hide()" >hide</button>
+
+<button (click)="toggle()">toggle</button>
+<button (click)="toggle()">{{display?'hide':'show'}}</button>
+
+@if(display){
+  <div style="background-color: blue; height: 40px; width: 40px; color: aliceblue; padding: 10px;">
+    hello world
+  </div>
+}

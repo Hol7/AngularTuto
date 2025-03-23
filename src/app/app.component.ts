@@ -15,6 +15,18 @@ export class AppComponent {
   title = 'angular-01tutor';
   count = 0;
   username = '';
+  display = false;
+
+  show(){
+    this.display = true;
+
+  }
+  hide(){
+    this.display = false;
+  }
+  toggle(){
+    this.display = !this.display;
+  }
 
   handleInputEvent(event: Event) {
     let name = (event.target as HTMLInputElement).value;
