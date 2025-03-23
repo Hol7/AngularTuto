@@ -1,4 +1,4 @@
-import { Component, effect, signal, WritableSignal } from '@angular/core';
+import { Component, effect, signal,computed, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from './signup/signup.component';
@@ -27,10 +27,26 @@ export class AppComponent {
   corout = signal(100);
   dataa:WritableSignal<number> = signal(10)
   dato:WritableSignal<number|string> = signal(10)
+  x = signal(20);
+  y= signal(30);
+
+  z=computed(()=>this.x()+this.y())
+  
+  voteValu(){
+    console.log(this.x())
+    console.log(this.y())
+    console.log(this.z())
+    this.y.set(40);
+    console.log(this.z)
+  }
+
 
   constructor() {
     effect(() => {
-      console.log(this.corout());
+      // console.log(this.corout());
+      console.log(this.x())
+      console.log(this.y())
+      console.log(this.z())
     });
   };
 
