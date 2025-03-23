@@ -40,3 +40,21 @@
     hello world
   </div>
 }
+
+<h1>List</h1>
+
+@for(user of users ; track user){
+  <div>{{user}}</div>
+}
+
+@for(student of students; track student; let id = $index ){
+<div style="display: flex; align-items: center;">
+  <h3>{{id}} </h3>
+  <h1>{{student.name}}</h1>
+  <span style="padding: 10px;">{{student.age}}</span>
+</div>
+}
+
+<!-- <div *ngFor="let user of users; trackBy: trackByFn">
+  <div>{{user}}</div>
+</div> -->

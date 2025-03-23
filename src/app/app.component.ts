@@ -16,6 +16,14 @@ export class AppComponent {
   count = 0;
   username = '';
   display = false;
+  users = ['dan','mse','toton','messieu','charle'];
+  students = [
+    {name:'mulan',age:20},
+    {name:'acte',age:21},
+    {name:'ser',age:20},
+    {name:'polin',age:40},
+  ];
+
 
   show(){
     this.display = true;
