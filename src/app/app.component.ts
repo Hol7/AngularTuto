@@ -1,14 +1,15 @@
 import { Component, effect, signal,computed, WritableSignal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LoginComponent, SignupComponent, ProfileComponent, FormsModule],
+  imports: [RouterOutlet, RouterLink, NgFor, LoginComponent, SignupComponent, ProfileComponent, FormsModule, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

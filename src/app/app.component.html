@@ -1,14 +1,29 @@
 <h1>Learning Angular</h1>
+<hr>
+<h1>Basic routing</h1>
+<ul
+  style="display: flex; cursor: pointer; padding: auto; justify-content: space-between; align-content: center; align-items: center; list-style: none;">
+  <li routerLink="login">
+    <a>login</a>
+  </li>
+  <li routerLink="about">
+    <a>about</a>
+  </li>
+  <li routerLink="contact">
+    <a>contact</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
+
 <button (click)="handleClick()" style="background-color: aqua; padding: 10px;">Click me!</button>
-<button (click)="sumFunction(40, 98)" 
-  style="margin-top: 10; border-radius: 10; background-color: aliceblue;">Our sum
+<button (click)="sumFunction(40, 98)" style="margin-top: 10; border-radius: 10; background-color: aliceblue;">Our sum
   Function
 </button>
 <app-login></app-login>
 <app-signup></app-signup>
 <app-profile></app-profile>
 <h3>Form</h3>
-<input [(ngModel)]="namo" placeholder="usename" type="text" >
+<input [(ngModel)]="namo" placeholder="usename" type="text">
 
 <p>{{namo}} </p>
 
@@ -26,33 +41,30 @@
 
 <h1>Input </h1>
 <h1>{{username}} </h1>
-<input 
-#AddInfoInput 
-(input)="handleInputEvent($event)"
- placeholder="username">
+<input #AddInfoInput (input)="handleInputEvent($event)" placeholder="username">
 <button (click)="addInpuInfo(AddInfoInput.value)">Add input Value</button>
 
 <h1>Condition</h1>
 
 <button (click)="show()">show</button>
 
-<button (click)="hide()" >hide</button>
+<button (click)="hide()">hide</button>
 
 <button (click)="toggle()">toggle</button>
 <button (click)="toggle()">{{display?'hide':'show'}}</button>
 
 @if(display){
-  <div style="background-color: blue; height: 40px; width: 40px; color: aliceblue; padding: 10px;">
-    hello world
-  </div>
+<div style="background-color: blue; height: 40px; width: 40px; color: aliceblue; padding: 10px;">
+  hello world
+</div>
 }
 
 <h1>List</h1>
 
 @for(user of users ; track user){
-  <div>{{user}}</div>
+<div>{{user}}</div>
 }@empty {
-  <h3>No value</h3>
+<h3>No value</h3>
 }
 
 @for(student of students; track student; let id = $index ){
@@ -65,26 +77,34 @@
 <h1>Signal</h1>
 <h4>{{corout()}}</h4>
 <h4>{{dato()}}</h4>
-<button (click)="updateValue()" >Click me</button>
-<button (click)="updateDataaa()" >Click me</button>
+<button (click)="updateValue()">Click me</button>
+<button (click)="updateDataaa()">Click me</button>
 
 <h1>computed</h1>
 {{z()}}
-<button (click)="voteValu()" >Update compute</button>
+<button (click)="voteValu()">Update compute</button>
 
 <!-- <div *ngFor="let user of users; trackBy: trackByFn">
   <div>{{user}}</div>
 </div> -->
 
 <h1>Todo App</h1>
-<input [(ngModel)]="task" type="text" placeholder="add value" >
+<input [(ngModel)]="task" type="text" placeholder="add value">
 <button (click)="addTask()">add todo</button>
- <!-- <p>{{task}} </p> -->
- 
- @for(task of taskList ; track task){
-   <ul style="display: flex; padding: 10px; list-style: none;">
-    <li>{{task.id}} </li>
-    <li>{{task.name}}</li>
-    <li><button (click)="deleteTask(task.id)">Delete </button></li>
-   </ul>
- }
+<!-- <p>{{task}} </p> -->
+
+@for(task of taskList ; track task){
+<ul style="display: flex; padding: 10px; list-style: none;">
+  <li>{{task.id}} </li>
+  <li>{{task.name}}</li>
+  <li><button (click)="deleteTask(task.id)">Delete </button></li>
+</ul>
+}
+
+<h1>Directives</h1>
+
+<ul>
+  <li *ngFor="let student of students">
+    {{student.name }}, {{student.age}}
+  </li>
+</ul>
