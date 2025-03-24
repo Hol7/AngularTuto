@@ -83,6 +83,7 @@
  
  @for(task of taskList ; track task){
    <ul style="display: flex; padding: 10px; list-style: none;">
+    <li>{{task.id}} </li>
     <li>{{task.name}}</li>
     <li><button (click)="deleteTask(task.id)">Delete </button></li>
    </ul>
