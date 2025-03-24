@@ -75,3 +75,15 @@
 <!-- <div *ngFor="let user of users; trackBy: trackByFn">
   <div>{{user}}</div>
 </div> -->
+
+<h1>Todo App</h1>
+<input [(ngModel)]="task" type="text" placeholder="add value" >
+<button (click)="addTask()">add todo</button>
+ <!-- <p>{{task}} </p> -->
+ 
+ @for(task of taskList ; track task){
+   <ul style="display: flex; padding: 10px; list-style: none;">
+    <li>{{task.name}}</li>
+    <li><button>Delete </button></li>
+   </ul>
+ }

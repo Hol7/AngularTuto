@@ -26,6 +26,13 @@ export class AppComponent {
     { name: 'ser', age: 20 },
     { name: 'polin', age: 40 },
   ];
+  task = "";
+  taskList : {id:number, name:string}[]=[];
+
+  addTask(){
+    this.taskList.push({id:this.taskList.length +1, name:this.task});
+    this.task = "";
+  }
 
   corout = signal(100);
   dataa:WritableSignal<number> = signal(10)
