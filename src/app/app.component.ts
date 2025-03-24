@@ -33,6 +33,9 @@ export class AppComponent {
     this.taskList.push({id:this.taskList.length +1, name:this.task});
     this.task = "";
   }
+  deleteTask(id:number){
+    this.taskList = this.taskList.filter(item => item.id != id )
+  }
 
   corout = signal(100);
   dataa:WritableSignal<number> = signal(10)
