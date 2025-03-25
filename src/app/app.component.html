@@ -1,9 +1,14 @@
 <h1>Learning Angular</h1>
 <hr>
 <h1>Basic routing</h1>
-<ul
-  style="display: flex; cursor: pointer; padding: auto; justify-content: space-between; align-content: center; align-items: center; list-style: none;">
-  <li routerLink="login">
+
+<div style="display: flex; justify-content: space-between;">
+  <h1>
+    Logo
+  </h1>
+  <ul
+  style="width: 200px;display: flex; cursor: pointer; padding: auto; justify-content: space-between; align-content: center; align-items: center; list-style: none;">
+  <li act routerLink="login">
     <a>login</a>
   </li>
   <li routerLink="about">
@@ -13,8 +18,11 @@
     <a>contact</a>
   </li>
 </ul>
-<router-outlet></router-outlet>
+</div>
 
+
+<router-outlet></router-outlet>
+<!-- 
 <button (click)="handleClick()" style="background-color: aqua; padding: 10px;">Click me!</button>
 <button (click)="sumFunction(40, 98)" style="margin-top: 10; border-radius: 10; background-color: aliceblue;">Our sum
   Function
@@ -84,14 +92,12 @@
 {{z()}}
 <button (click)="voteValu()">Update compute</button>
 
-<!-- <div *ngFor="let user of users; trackBy: trackByFn">
-  <div>{{user}}</div>
-</div> -->
+
 
 <h1>Todo App</h1>
 <input [(ngModel)]="task" type="text" placeholder="add value">
 <button (click)="addTask()">add todo</button>
-<!-- <p>{{task}} </p> -->
+
 
 @for(task of taskList ; track task){
 <ul style="display: flex; padding: 10px; list-style: none;">
@@ -107,4 +113,4 @@
   <li *ngFor="let student of students">
     {{student.name }}, {{student.age}}
   </li>
-</ul>
+</ul> -->
