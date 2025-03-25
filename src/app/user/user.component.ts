@@ -17,7 +17,7 @@ export class UserComponent {
   ngOnInit(){
     this.route.params.subscribe(params=> {
       // console.log(params)
-      this.name = params['name']
+      this.name = params['name'] +" " + params['id']
     })
   }
 }
