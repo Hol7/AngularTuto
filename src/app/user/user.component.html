@@ -1,1 +1,7 @@
 <p>user works!</p>
+
+@for(user of users ; track user ){
+    <ul>
+        <li routerLink="user" >{{user.name}} </li>
+    </ul>
+}

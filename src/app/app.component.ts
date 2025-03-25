@@ -5,11 +5,14 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
+import { HeaderComponent } from "./header/header.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgFor, LoginComponent, SignupComponent, ProfileComponent, FormsModule, ],
+  imports: [RouterOutlet, HeaderComponent, FormsModule, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
