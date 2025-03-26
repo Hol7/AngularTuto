@@ -21,6 +21,8 @@
 
 <form [formGroup]="profileForm" (ngSubmit)="submitData()" >
     <input type="text" placeholder="name1" formControlName="name1">
+    <span *ngIf="profileForm.controls['name1']?.hasError('required')" >this is required</span>
+    <span *ngIf="profileForm.controls['name1']?.invalid &&  (profileForm.controls['name1']?.touched  ) " >this is required</span>
     <br>
     <input type="email" placeholder="email1" formControlName="email1">
     <br>
@@ -30,7 +32,6 @@
 </form>
 
 <br>
-<h1>{{this.profileForm.value.email1}} </h1>
-<!-- <h1>{{email1.value}} </h1>
-<h1>{{password1.value}} </h1> -->
+
+
 

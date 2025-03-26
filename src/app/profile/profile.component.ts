@@ -1,10 +1,11 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
 })
@@ -14,10 +15,11 @@ export class ProfileComponent {
   password = new FormControl();
 
   profileForm = new FormGroup({
-    name1: new FormControl(),
-    email1: new FormControl(),
-    password1: new FormControl(),
+    name1: new FormControl('',[Validators.required]),
+    email1: new FormControl('',[Validators.required, Validators.maxLength(30) ]),
+    password1: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
+  
   submitData(){
     console.log(this.profileForm.value);
   }
