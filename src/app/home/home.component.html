@@ -6,3 +6,9 @@
         <li routerLink="user/{{user.id}}/{{user.name}}" >{{user.name}} </li>
     </ul>
 }
+
+@for(user of users ; track user.id ){
+    <ul>
+        <li routerLink="user/{{user.id}}/{{user.name}}" >{{user.name}} </li>
+    </ul>
+}
